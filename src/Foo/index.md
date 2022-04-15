@@ -10,7 +10,7 @@ Demo:
 
 ```tsx
 import React from 'react';
-import { Foo } from 'UI';
+import { Foo } from 'orejs_ui';
 
 export default () => <Foo title="First Demo" />;
 ```
