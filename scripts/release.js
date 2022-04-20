@@ -117,6 +117,7 @@ async function main() {
 
   // publish packages
   step('\nPublishing packages...');
+  await publishPackage('', targetVersion, runIfNotDry);
   for (const pkg of packages) {
     await publishPackage(pkg, targetVersion, runIfNotDry);
   }
@@ -162,8 +163,8 @@ function updateDeps(pkg, depType, version) {
   if (!deps) return;
   Object.keys(deps).forEach((dep) => {
     if (
-      dep === 'vue' ||
-      (dep.startsWith('@vue') && packages.includes(dep.replace(/^@vue\//, '')))
+      dep === 'ored' ||
+      (dep.startsWith('@ored') && packages.includes(dep.replace(/^@ored\//, '')))
     ) {
       console.log(chalk.yellow(`${pkg.name} -> ${depType} -> ${dep}@${version}`));
       deps[dep] = version;
@@ -175,7 +176,7 @@ async function publishPackage(pkgName, version, runIfNotDry) {
   if (skippedPackages.includes(pkgName)) {
     return;
   }
-  const pkgRoot = getPkgRoot(pkgName);
+  const pkgRoot = pkgName ? getPkgRoot(pkgName) : __dirname;
   const pkgPath = path.resolve(pkgRoot, 'package.json');
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
   if (pkg.private) {

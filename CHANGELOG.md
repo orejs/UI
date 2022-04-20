@@ -1,3 +1,5 @@
+## [1.0.4](https://github.com/orejs/UI/compare/v1.0.3...v1.0.4) (2022-04-20)
+
 ## 1.0.3 (2022-04-20)
 
 ### Bug Fixes

@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@commitlint/cli': ^16.2.3
       '@commitlint/config-conventional': ^16.2.1
-      '@ored/utils': workspace:^
+      '@ored/utils': 1.0.4
       '@testing-library/jest-dom': ^5.15.1
       '@testing-library/react': ^12.1.2
       '@types/jest': ^27.0.3
