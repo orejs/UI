@@ -23,6 +23,7 @@
     "build": "father-build && pnpm --filter \"@ored/*\" build",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "ci": "npm install -g pnpm && pnpm install",
     "release": "node scripts/release.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "preinstall": "node ./scripts/preinstall.js",
