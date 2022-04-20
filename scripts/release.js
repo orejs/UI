@@ -197,7 +197,7 @@ async function publishPackage(pkgName, version, runIfNotDry) {
   // TODO use inferred release channel after official 3.0 release
   // const releaseTag = semver.prerelease(version)[0] || null
 
-  step(`Publishing ${pkgName}...`);
+  step(`Publishing ${pkg.name}...`);
   try {
     await runIfNotDry(
       // note: use of yarn is intentional here as we rely on its publishing
@@ -216,10 +216,10 @@ async function publishPackage(pkgName, version, runIfNotDry) {
         stdio: 'pipe',
       },
     );
-    console.log(chalk.green(`Successfully published ${pkgName}@${version}`));
+    console.log(chalk.green(`Successfully published ${pkg.name}@${version}`));
   } catch (e) {
     if (e.stderr.match(/previously published/)) {
-      console.log(chalk.red(`Skipping already published: ${pkgName}`));
+      console.log(chalk.red(`Skipping already published: ${pkg.name}`));
     } else {
       throw e;
     }
