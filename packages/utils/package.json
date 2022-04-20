@@ -1,0 +1,21 @@
+{
+    "name": "@ored/utils",
+    "description": "Ore Design Utils",
+    "license": "MIT",
+    "version": "1.0.0",
+    "files": [
+        "es",
+        "lib",
+        "package.json"
+    ],
+    "main": "lib/index.js",
+    "module": "es/index.js",
+    "typings": "lib/index.d.ts",
+    "scripts": {
+        "build": "father-build"
+    },
+    "sideEffects": [],
+    "publishConfig": {
+        "access": "public"
+    }
+}
