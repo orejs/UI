@@ -2,7 +2,7 @@
   "name": "@ored/utils",
   "description": "Ore Design Utils",
   "license": "MIT",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "files": [
     "es",
     "lib",

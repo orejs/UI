@@ -1,6 +1,6 @@
 {
   "name": "ored",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "An UI design language and React&Taro components implementation",
   "title": "Ore Design",
   "keywords": [
@@ -56,7 +56,7 @@
     ]
   },
   "dependencies": {
-    "@ored/utils": "1.0.6",
+    "@ored/utils": "1.0.7",
     "react": "^17.0.0"
   },
   "devDependencies": {
