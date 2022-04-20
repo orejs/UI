@@ -176,7 +176,7 @@ async function publishPackage(pkgName, version, runIfNotDry) {
   if (skippedPackages.includes(pkgName)) {
     return;
   }
-  const pkgRoot = pkgName ? getPkgRoot(pkgName) : __dirname;
+  const pkgRoot = pkgName ? getPkgRoot(pkgName) : path.resolve(__dirname, '..');
   const pkgPath = path.resolve(pkgRoot, 'package.json');
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
   if (pkg.private) {
