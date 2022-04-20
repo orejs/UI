@@ -36,6 +36,9 @@ const step = (msg) => console.log(chalk.cyan(msg));
 
 async function main() {
   let targetVersion = args._[0];
+  if (versionIncrements.includes(targetVersion)) {
+    targetVersion = inc(targetVersion);
+  }
 
   if (!targetVersion) {
     // no explicit version, offer suggestions
@@ -64,15 +67,19 @@ async function main() {
     throw new Error(`invalid target version: ${targetVersion}`);
   }
 
-  const { yes } = await prompt({
-    type: 'confirm',
-    name: 'yes',
-    message: `Releasing v${targetVersion}. Confirm?`,
-  });
+  step(`Releasing v${targetVersion}.`);
 
-  if (!yes) {
-    return;
-  }
+  // if (!args['--yes']) {
+  //   const { yes } = await prompt({
+  //     type: 'confirm',
+  //     name: 'yes',
+  //     message: `Releasing v${targetVersion}. Confirm?`,
+  //   });
+
+  //   if (!yes) {
+  //     return;
+  //   }
+  // }
 
   // run tests before release
   //   step('\nRunning tests...')
